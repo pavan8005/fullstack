@@ -26,10 +26,8 @@ class Teacher extends Person {
     return super.displayInfo() + `, Subject: ${this.subject}`;
   }
 }
-const student1 = new Student("Alice", 20, "A");
-const teacher1 = new Teacher("Mr. John", 40, "Math");
-
-function showStudent() {
+const student1 = new Student("Juhi", 18, "A");
+const teacher1 = new Teacher("Mr. Pavan", 25, "Math");function showStudent() {
   document.getElementById("output").innerText =
     "Student Info: " + student1.displayInfo();
 }
