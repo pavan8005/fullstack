@@ -1,0 +1,10 @@
+{
+  "name": "experiment-4-1",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "main": "employee_management.js",
+  "scripts": {
+    "start": "node employee_management.js"
+  },
+  "dependencies": {}
+}
