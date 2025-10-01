@@ -29,9 +29,13 @@ router.get('/', async (req, res, next) => {
 router.get('/:id', async (req, res, next) => {
   try {
     const { id } = req.params;
-    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(400).json({ message: 'Invalid id' });
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(400).json({ message: 'Invalid id' });
+    }
     const product = await Product.findById(id);
-    if (!product) return res.status(404).json({ message: 'Product not found' });
+    if (!product) {
+      return res.status(404).json({ message: 'Product not found' });
+    }
     res.json(product);
   } catch (err) {
     next(err);
@@ -42,14 +46,18 @@ router.get('/:id', async (req, res, next) => {
 router.put('/:id', async (req, res, next) => {
   try {
     const { id } = req.params;
-    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(400).json({ message: 'Invalid id' });
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(400).json({ message: 'Invalid id' });
+    }
 
     const updated = await Product.findByIdAndUpdate(id, req.body, {
       new: true,
       runValidators: true
     });
 
-    if (!updated) return res.status(404).json({ message: 'Product not found' });
+    if (!updated) {
+      return res.status(404).json({ message: 'Product not found' });
+    }
     res.json(updated);
   } catch (err) {
     next(err);
@@ -60,10 +68,14 @@ router.put('/:id', async (req, res, next) => {
 router.delete('/:id', async (req, res, next) => {
   try {
     const { id } = req.params;
-    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(400).json({ message: 'Invalid id' });
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(400).json({ message: 'Invalid id' });
+    }
 
     const deleted = await Product.findByIdAndDelete(id);
-    if (!deleted) return res.status(404).json({ message: 'Product not found' });
+    if (!deleted) {
+      return res.status(404).json({ message: 'Product not found' });
+    }
 
     // Return message + deleted product, matching your screenshot
     res.json({ message: 'Product deleted', product: deleted });
