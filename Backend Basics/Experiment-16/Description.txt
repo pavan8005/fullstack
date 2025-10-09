@@ -1,0 +1,28 @@
+Title:
+ Understanding Middleware in Express.js
+
+
+Description:
+I learned how to use middleware in Express.js to handle requests step by step. 
+Middleware allows us to process incoming requests, modify request/response objects, 
+handle errors, and control the flow of the application in a structured way.
+
+
+Steps I Followed:
+
+1. Created application-level middleware using app.use() for tasks like logging all requests.
+2. Used router-level middleware to apply specific logic for certain routes using express.Router().
+3. Integrated built-in middleware like express.json() to parse JSON request bodies.
+4. Added third-party middleware such as morgan for request logging and cors for enabling cross-origin requests.
+5. Implemented error-handling middleware using four arguments (err, req, res, next) to catch and handle errors.
+6. Built custom middleware examples like logging requests and checking authentication tokens before allowing access to protected routes.
+7. Learned the importance of middleware order for proper execution flow.
+
+
+Learning Outcomes:
+
+Middleware helps separate responsibilities in an application (logging, auth, error handling).
+Learned how to modify requests and responses before reaching route handlers.
+Understood how to create reusable and modular code for cleaner applications.
+Learned how to handle errors globally instead of repeating logic in each route.
+Gained practical experience with both built-in and third-party middleware.
