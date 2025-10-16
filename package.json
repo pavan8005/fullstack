@@ -1,12 +1,13 @@
 {
   "dependencies": {
-    "express": "^5.1.0"
+    "axios": "^1.12.2",
+    "express": "^5.1.0",
+    "react-router-dom": "^7.9.4"
   },
   "name": "fullstack",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
